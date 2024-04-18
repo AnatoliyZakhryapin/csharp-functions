@@ -87,6 +87,46 @@
             Console.WriteLine("Snack 4");
 
             Console.WriteLine($"La somma dell'array con i numeri elevati al quadrato: {SommaElementiArray(ElevaArrayAlQuadrato(arrayDefault))}");
+
+            // -------
+            // BONUS
+            // -------
+
+            Console.WriteLine("Bonus");
+
+            int numberOfelement = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(numberOfelement);
+
+            int[] arrayCustom = new int[numberOfelement];
+
+            for (int i = 0;i < numberOfelement;i++)
+            {
+                arrayCustom[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Snack 1");
+
+            StampaArray(arrayCustom);
+
+            Console.WriteLine();
+
+            Console.WriteLine("Snack 2");
+
+            StampaArray(ElevaArrayAlQuadrato(arrayCustom));
+            Console.WriteLine();
+
+            StampaArray(arrayCustom);
+            Console.WriteLine();
+
+
+            Console.WriteLine("Snack 3");
+
+            Console.WriteLine($"La somma dell'array: {SommaElementiArray(arrayCustom)}");
+
+            Console.WriteLine("Snack 4");
+
+            Console.WriteLine($"La somma dell'array con i numeri elevati al quadrato: {SommaElementiArray(ElevaArrayAlQuadrato(arrayCustom))}");
         }
 
     }
