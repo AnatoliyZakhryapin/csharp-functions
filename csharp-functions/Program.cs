@@ -4,7 +4,40 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Seleziona opzione:");
+                Console.WriteLine();
+                Console.WriteLine("1. Voglio uttilizzare arrayDefault");
+                Console.WriteLine("2. Voglio creare io array");
+                Console.WriteLine();
+                Console.WriteLine("0. Esci");
+
+                // Prendiamo l'input dell'utente
+                string input = Console.ReadLine();
+
+                // Converte l'input in un numero intero
+                if (int.TryParse(input, out int choice))
+                {
+                    switch (choice)
+                    {
+                        case 0:
+                            // Uscita dal programma
+                            return;
+                        case 1:
+                            useArrayDefault();
+                            break;
+                        case 2:
+                            useArrayCustom();
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Input non valido. Riprova.");
+                }
+            }
 
             void StampaArray(int[] array)
             {
@@ -47,86 +80,145 @@
                 return sum;
             }
 
-            int[] arrayDefault = { 2, 6, 7, 5, 3, 9 };
-
-
-            // -------
-            // Snack 1
-            // -------
-
-            Console.WriteLine("Snack 1");
-
-            StampaArray(arrayDefault);
-
-            Console.WriteLine();
-
-            // -------
-            // Snack 2
-            // -------
-
-            Console.WriteLine("Snack 2");
-
-            StampaArray(ElevaArrayAlQuadrato(arrayDefault));
-            Console.WriteLine();
-            
-            StampaArray(arrayDefault);
-            Console.WriteLine();
-
-            // -------
-            // Snack 3
-            // -------
-
-            Console.WriteLine("Snack 3");
-
-            Console.WriteLine($"La somma dell'array: {SommaElementiArray(arrayDefault)}");
-
-            // -------
-            // Snack 4
-            // -------
-
-            Console.WriteLine("Snack 4");
-
-            Console.WriteLine($"La somma dell'array con i numeri elevati al quadrato: {SommaElementiArray(ElevaArrayAlQuadrato(arrayDefault))}");
-
-            // -------
-            // BONUS
-            // -------
-
-            Console.WriteLine("Bonus");
-
-            int numberOfelement = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine(numberOfelement);
-
-            int[] arrayCustom = new int[numberOfelement];
-
-            for (int i = 0;i < numberOfelement;i++)
+            void Snack1(int[] array)
             {
-                arrayCustom[i] = Convert.ToInt32(Console.ReadLine());
+                // -------
+                // Snack 1
+                // -------
+
+                Console.WriteLine();
+                Console.WriteLine("Snack 1");
+
+                StampaArray(array);
+
+                Console.WriteLine();
             }
 
-            Console.WriteLine("Snack 1");
+            void Snack2(int[] array)
+            {
+                // -------
+                // Snack 2
+                // -------
 
-            StampaArray(arrayCustom);
+                Console.WriteLine();
+                Console.WriteLine("Snack 2");
 
-            Console.WriteLine();
+                StampaArray(ElevaArrayAlQuadrato(array));
+                Console.WriteLine();
 
-            Console.WriteLine("Snack 2");
+                StampaArray(array);
+                Console.WriteLine();
+            }
 
-            StampaArray(ElevaArrayAlQuadrato(arrayCustom));
-            Console.WriteLine();
+            void Snack3(int[] array)
+            {
+                // -------
+                // Snack 3
+                // -------
 
-            StampaArray(arrayCustom);
-            Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("Snack 3");
 
+                Console.WriteLine($"La somma dell'array: {SommaElementiArray(array)}");
+            }
 
-            Console.WriteLine("Snack 3");
+            void Snack4(int[] array)
+            {
+                // -------
+                // Snack 4
+                // -------
 
-            Console.WriteLine($"La somma dell'array: {SommaElementiArray(arrayCustom)}");
+                Console.WriteLine();
+                Console.WriteLine("Snack 4");
 
-            Console.WriteLine("Snack 4");
+                Console.WriteLine($"La somma dell'array con i numeri elevati al quadrato: {SommaElementiArray(ElevaArrayAlQuadrato(array))}");
+            }
 
-            Console.WriteLine($"La somma dell'array con i numeri elevati al quadrato: {SommaElementiArray(ElevaArrayAlQuadrato(arrayCustom))}");
+            void SnackChoice(int[] array)
+            {
+                while (true)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Seleziona uno snack da eseguire:");
+                    Console.WriteLine();
+                    Console.WriteLine("1. Snack 1");
+                    Console.WriteLine("2. Snack 2");
+                    Console.WriteLine("3. Snack 3");
+                    Console.WriteLine("4. Snack 4");
+                    Console.WriteLine();
+                    Console.WriteLine("0. Esci");
+
+                    // Prendiamo l'input dell'utente
+                    string input = Console.ReadLine();
+
+                    // Converte l'input in un numero intero
+                    if (int.TryParse(input, out int choice))
+                    {
+                        switch (choice)
+                        {
+                            case 0:
+                                // Uscita dal programma
+                                return;
+                            case 1:
+                                Snack1(array);
+                                break;
+                            case 2:
+                                Snack2(array);
+                                break;
+                            case 3:
+                                Snack3(array);
+                                break;
+                            case 4:
+                                Snack4(array);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Input non valido. Riprova.");
+                    }
+                }
+            }
+
+            void useArrayDefault()
+            {
+                int[] arrayDefault = { 2, 6, 7, 5, 3, 9 };
+
+                SnackChoice(arrayDefault);
+            }
+
+            void useArrayCustom()
+            {
+                // -------
+                // BONUS
+                // -------
+                Console.WriteLine();
+                Console.WriteLine("Bonus");
+
+                Console.WriteLine();
+                Console.WriteLine("Crea il tuo array personalizzato.");
+
+                Console.WriteLine();
+                Console.WriteLine("Inserisci la quantita di elementi dell'array:");
+                int numberOfelement = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine();
+                Console.WriteLine($"Quantita di elementi inserita è: {numberOfelement}");
+
+                int[] arrayCustom = new int[numberOfelement];
+
+                Console.WriteLine();
+                Console.WriteLine("Adesso devi inserire il numero per ogni elemento dell'array");
+                for (int i = 0; i < numberOfelement; i++)
+                {
+                    Console.WriteLine();
+                    Console.Write($"Elemento {i + 1} : numero = ");
+                    arrayCustom[i] = Convert.ToInt32(Console.ReadLine());
+                }
+
+                SnackChoice(arrayCustom);
+            }
+           
         }
 
     }
