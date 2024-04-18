@@ -40,6 +40,13 @@
                 return nuovoArray;
             }
 
+            int SommaElementiArray(int[] array)
+            {
+                int sum = array.Sum();
+
+                return sum;
+            }
+
         }
 
     }
