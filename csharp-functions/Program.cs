@@ -79,7 +79,14 @@
             Console.WriteLine("Snack 3");
 
             Console.WriteLine($"La somma dell'array: {SommaElementiArray(arrayDefault)}");
-           
+
+            // -------
+            // Snack 4
+            // -------
+
+            Console.WriteLine("Snack 4");
+
+            Console.WriteLine($"La somma dell'array con i numeri elevati al quadrato: {SommaElementiArray(ElevaArrayAlQuadrato(arrayDefault))}");
         }
 
     }
