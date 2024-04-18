@@ -23,6 +23,11 @@
                 Console.Write(", ");
             }
 
+            int Quadrato(int numero)
+            {
+                return numero * numero;
+            }
+
         }
 
     }
