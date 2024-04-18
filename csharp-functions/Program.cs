@@ -28,6 +28,18 @@
                 return numero * numero;
             }
 
+            int[] ElevaArrayAlQuadrato(int[] array)
+            {
+                int[] nuovoArray = new int[array.Length];
+                //int[] nuovoArray = (int[])array.Clone();
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    nuovoArray[i] = Quadrato(array[i]);
+                }
+                return nuovoArray;
+            }
+
         }
 
     }
