@@ -49,6 +49,7 @@
 
             int[] arrayDefault = { 2, 6, 7, 5, 3, 9 };
 
+            StampaArray(arrayDefault);
         }
 
     }
