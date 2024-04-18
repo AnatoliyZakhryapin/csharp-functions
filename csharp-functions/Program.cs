@@ -198,10 +198,27 @@
                 Console.WriteLine();
                 Console.WriteLine("Crea il tuo array personalizzato.");
 
-                Console.WriteLine();
-                Console.WriteLine("Inserisci la quantita di elementi dell'array:");
-                int numberOfelement = Convert.ToInt32(Console.ReadLine());
+                int numberOfelement;
+                while (true)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Inserisci la quantita di elementi dell'array:");
 
+                    // Salviamo input 
+                    string userInput = Console.ReadLine();
+
+                    try
+                    {
+                        numberOfelement = Convert.ToInt32(userInput);
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Errore di formato. Inserisci un numero valido, NON puo contenere le lettere o simboli!.");
+                    }
+                }
+                
                 Console.WriteLine();
                 Console.WriteLine($"Quantita di elementi inserita è: {numberOfelement}");
 
@@ -211,9 +228,26 @@
                 Console.WriteLine("Adesso devi inserire il numero per ogni elemento dell'array");
                 for (int i = 0; i < numberOfelement; i++)
                 {
-                    Console.WriteLine();
-                    Console.Write($"Elemento {i + 1} : numero = ");
-                    arrayCustom[i] = Convert.ToInt32(Console.ReadLine());
+                   
+                    while (true)
+                    {
+                        Console.WriteLine();
+                        Console.Write($"Elemento {i + 1} : numero = ");
+
+                        // Salviamo input 
+                        string userInput = Console.ReadLine();
+
+                        try
+                        {
+                            arrayCustom[i] = Convert.ToInt32(userInput);
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Errore di formato. Inserisci un numero valido, NON puo contenere le lettere o simboli!.");
+                        }
+                    }
                 }
 
                 SnackChoice(arrayCustom);
