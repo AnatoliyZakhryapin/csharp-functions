@@ -49,7 +49,30 @@
 
             int[] arrayDefault = { 2, 6, 7, 5, 3, 9 };
 
+
+            // -------
+            // Snack 1
+            // -------
+
+            Console.WriteLine("Snack 1");
+
             StampaArray(arrayDefault);
+
+            Console.WriteLine();
+
+            // -------
+            // Snack 2
+            // -------
+
+            Console.WriteLine("Snack 2");
+
+            StampaArray(ElevaArrayAlQuadrato(arrayDefault));
+            Console.WriteLine();
+            
+            StampaArray(arrayDefault);
+
+
+
         }
 
     }
