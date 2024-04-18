@@ -70,9 +70,16 @@
             Console.WriteLine();
             
             StampaArray(arrayDefault);
+            Console.WriteLine();
 
+            // -------
+            // Snack 3
+            // -------
 
+            Console.WriteLine("Snack 3");
 
+            Console.WriteLine($"La somma dell'array: {SommaElementiArray(arrayDefault)}");
+           
         }
 
     }
